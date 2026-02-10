@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Intro to Sequencing Data &amp; UNIX Tutorial</title>
+  <meta name="description" content="Intro to Sequencing Data &amp; UNIX Tutorial" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Intro to Sequencing Data &amp; UNIX Tutorial" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intro to Sequencing Data &amp; UNIX Tutorial" />
+  
+  
+  
+
+<meta name="author" content="Christina Costa" />
+
+
+<meta name="date" content="2026-02-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="extract-information-about-our-sequence-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Week 3</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="basic-commands-and-view-files.html"><a href="basic-commands-and-view-files.html"><i class="fa fa-check"></i><b>1</b> <span style="color: green;"> Basic Commands and View Files </span></a></li>
+<li class="chapter" data-level="2" data-path="extract-information-about-our-sequence-data.html"><a href="extract-information-about-our-sequence-data.html"><i class="fa fa-check"></i><b>2</b> <span style="color: green;"> Extract Information about our Sequence Data </span></a></li>
+<li class="chapter" data-level="3" data-path="fastq-sample-info.html"><a href="fastq-sample-info.html"><i class="fa fa-check"></i><b>3</b> <span style="color: green;"> FASTQ Sample Info </span></a></li>
+<li class="chapter" data-level="4" data-path="save-your-terminal-session.html"><a href="save-your-terminal-session.html"><i class="fa fa-check"></i><b>4</b> <span style="color: green;"> Save Your Terminal Session </span></a></li>
+<li class="chapter" data-level="5" data-path="assessing-sequencing-data-quality-fastqc.html"><a href="assessing-sequencing-data-quality-fastqc.html"><i class="fa fa-check"></i><b>5</b> <span style="color: green;"> Assessing Sequencing Data Quality (FASTQC) </span></a></li>
+<li class="chapter" data-level="6" data-path="submit-your-work.html"><a href="submit-your-work.html"><i class="fa fa-check"></i><b>6</b> <span style="color: green;"> Submit Your Work </span></a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to Sequencing Data &amp; UNIX Tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Intro to Sequencing Data &amp; UNIX Tutorial</h1>
+<p class="author"><em>Christina Costa</em></p>
+<p class="date"><em>2026-02-11</em></p>
+</div>
+<div id="basic-commands-and-view-files" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> <span style="color: green;"> Basic Commands and View Files </span><a href="basic-commands-and-view-files.html#basic-commands-and-view-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="open-the-terminal-application-on-your-computer-for-mac.-for-windows-you-should-be-able-to-access-this-if-you-have-the-windows-subsystem-for-linux-wsl-installed-which-is-run-either-via-the-ubuntu-or-the-windows-terminal-app." class="section level4 hasAnchor" number="1.0.0.1">
+<h4><span class="header-section-number">1.0.0.1</span> Open the Terminal application on your computer for Mac. For Windows, you should be able to access this if you have the Windows Subsystem for Linux (WSL) installed, which is run either via the Ubuntu or the Windows Terminal App.<a href="basic-commands-and-view-files.html#open-the-terminal-application-on-your-computer-for-mac.-for-windows-you-should-be-able-to-access-this-if-you-have-the-windows-subsystem-for-linux-wsl-installed-which-is-run-either-via-the-ubuntu-or-the-windows-terminal-app." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We are going to learn some basic UNIX commands and explore some raw sequence data files!</p>
+<p>Now the command line is not strictly a programming language but it does have a variety of tools and commands you can run in the shell. And you can write <strong>Bash</strong> scripts to execute on the command line.</p>
+<p>We will simply be entering commands directly in the terminal, but in theory we could place these in a Bash script to run again in the future, or to run on other input files.</p>
+<p>Additionally, you should <strong>open up a Word Document to write your answers to the Questions below</strong>.</p>
+<p>First, locate the <strong>ACE2 FASTA</strong> file you downloaded from NCBI last week (with the five orthologs in different species).</p>
+<p>You are likely in your “Users” directory on your computer. To change directories you are going to use the <strong>“cd”</strong> command. For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="basic-commands-and-view-files.html#cb1-1" tabindex="-1"></a><span class="bu">cd</span> /Desktop/ANTHP40149</span></code></pre></div>
+<p>You can also check what directory you are in with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="basic-commands-and-view-files.html#cb2-1" tabindex="-1"></a><span class="bu">pwd</span> </span></code></pre></div>
+<p>You should see the directory change to the left of where you type.</p>
+<p>You can also create directories using <strong>“mkdir”</strong>. This will create a new directory in whatever location you are currently in.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="basic-commands-and-view-files.html#cb3-1" tabindex="-1"></a><span class="fu">mkdir</span> Week3</span></code></pre></div>
+<p>Now, if we would like to see what files are in our current directory we can use another very useful command <strong>“ls”</strong>.</p>
+<p>Type <strong>“ls”</strong> and a list of your files and directories in that folder should appear.</p>
+<p>Now type <strong>“ls -lht”</strong>. This (<strong>-</strong>) is an example of a <strong>flag</strong> and modifies the command.</p>
+<p>Specifically, it tells it to output the user permissions, size, and dates modified for each file (<strong>-l</strong>), output this in a human readable format, in particular so we can understand file size (<strong>-h</strong>), and sort them by time, with the most recently modified first (<strong>-t</strong>).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="basic-commands-and-view-files.html#cb4-1" tabindex="-1"></a><span class="fu">ls</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="basic-commands-and-view-files.html#cb5-1" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lht</span></span></code></pre></div>
+<p>If you want to learn more about a command take a look at the <strong>man</strong> page</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="basic-commands-and-view-files.html#cb6-1" tabindex="-1"></a><span class="fu">man</span> ls</span></code></pre></div>
+<p>Type <strong>q</strong> to quit.</p>
+<p>Or, if the man page does not exist for some commands you can also use the <strong>–help</strong> flag</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="basic-commands-and-view-files.html#cb7-1" tabindex="-1"></a><span class="fu">less</span> <span class="at">--help</span></span></code></pre></div>
+<p><strong>Some basic commands</strong>:</p>
+<ul>
+<li>ls (list)</li>
+<li>mkdir (make directory)</li>
+<li>cp (copy file)</li>
+<li>mv (rename file)</li>
+<li>pwd (print working directory)</li>
+</ul>
+<p>Now we want to actually view the contents of our ACE2 FASTA file. We can do that from the command line with the <strong>“less”</strong> function.</p>
+<p>As usual in these tutorials, you may need to change the file names to match <strong>YOUR</strong> file:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="basic-commands-and-view-files.html#cb8-1" tabindex="-1"></a><span class="fu">less</span> ace2.fa</span></code></pre></div>
+<p>This should print the file contents to the terminal. To scroll down use your space bar. To exit again type <strong>q</strong>.</p>
+<p>Instead of <strong>“less”</strong> we could also use <strong>“cat”</strong> to view the content of a file. However <strong>cat</strong> prints the entire contents to the screen (which in a sequence data file can be extremely long!).</p>
+<p>To avoid that, <strong>less</strong> lets us just open the first part and scroll if we wish.</p>
+<p>This is a good moment to mention that if you make a mistake, and say <strong>cat</strong> a million line file you don’t have to panic and close your terminal! You can just hit <strong>CNTRL + C</strong> and it will stop whatever is running.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="extract-information-about-our-sequence-data.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/Sequencing_Unix_Intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

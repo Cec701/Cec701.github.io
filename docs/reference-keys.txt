@@ -1,0 +1,12 @@
+basic-commands-and-view-files
+open-the-terminal-application-on-your-computer-for-mac.-for-windows-you-should-be-able-to-access-this-if-you-have-the-windows-subsystem-for-linux-wsl-installed-which-is-run-either-via-the-ubuntu-or-the-windows-terminal-app.
+extract-information-about-our-sequence-data
+question-1.-from-only-visually-examining-the-reads-which-of-these-fastq-files-is-most-likely-the-output-of-long-read-sequencing-and-which-is-from-short-read-sequencing
+question-2.-do-you-think-these-reads-are-single-or-paired-end-hint-look-at-the-number-of-fastq-files-i-provided-you-for-each-sample-and-the-headers-of-the-reads.
+fastq-sample-info
+save-your-terminal-session
+assessing-sequencing-data-quality-fastqc
+question-3-fastq-summary.-fastqc-will-also-show-you-some-summary-stats.-from-the-report-for-each-fastq-file-what-is-the-total-number-of-sequences-the-total-number-of-bases-what-is-the-range-in-sequence-length
+question-4.-sequencing-quality.-do-you-notice-any-quality-issues-in-the-fastqc-report-of-either-file-what-might-each-indicate-about-the-data
+question-5.-sequencing-technology-compare-the-illumina-err12040069---short-read-and-pacbio-hg02486---long-read-fastqc-reports.-what-differences-do-you-notice
+submit-your-work
