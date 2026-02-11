@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now, download the two FASTQ files from Brightspace for today. Remember this is the raw data we get from the sequencing machine.</p>
 <p>One of these contains short reads and the other long reads.</p>
 <p>A very useful character to know is the <strong>asterisk</strong> symbol, which is a universal expression, it stands for anything, better known as a <strong>wild card</strong>.</p>
-<p>The following line will show you all your files ending in <strong>fastq.gz</strong>. Make sure to changed your directory if needed using <strong>cd</strong> to the file location.</p>
+<p>The following line will show you all your files ending in <strong>fastq.gz</strong>. Make sure to change your directory if needed using <strong>cd</strong> to the file location.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="extract-information-about-our-sequence-data.html#cb11-1" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lht</span> <span class="pp">*</span>fastq.gz</span></code></pre></div>
 <p>Note: these files are in a <strong>compressed</strong> format (<strong>.gz</strong>). The same commands will work but first you need to unzip it. Do not do this by clicking on the file! Keep it zipped. We will only unzip it in the Terminal.</p>
 <p>Use the <strong>gzcat</strong> command followed by your file name. This is the same as the <strong>cat</strong> command but it works on <strong>gzipped</strong> files.</p>

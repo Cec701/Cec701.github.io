@@ -8,5 +8,5 @@ save-your-terminal-session
 assessing-sequencing-data-quality-fastqc
 question-3-fastq-summary.-fastqc-will-also-show-you-some-summary-stats.-from-the-report-for-each-fastq-file-what-is-the-total-number-of-sequences-the-total-number-of-bases-what-is-the-range-in-sequence-length
 question-4.-sequencing-quality.-do-you-notice-any-quality-issues-in-the-fastqc-report-of-either-file-what-might-each-indicate-about-the-data
-question-5.-sequencing-technology-compare-the-illumina-err12040069---short-read-and-pacbio-hg02486---long-read-fastqc-reports.-what-differences-do-you-notice
+question-5.-sequencing-technology-compare-the-illumina-err12040069-and-pacbio-hg02486-fastqc-reports.-what-differences-do-you-notice
 submit-your-work
